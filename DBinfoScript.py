@@ -101,44 +101,37 @@ cursor.execute(
 cursor.execute(
     """
     INSERT INTO coffee (roastery, roast_degree,roast_date, name, description, price_per_kg_nok, coffee_batch_id)
-    VALUES ('roastery1', 'degree1', 0001-01-01, 'name1', 'description1', 1, 1)
+    VALUES ('Coffee Roaster', 'degree1', 2021-01-01, 'Golden Coffee', 'fine roasted beans', 10, 1)
     """
 )
 cursor.execute(
     """
     INSERT INTO coffee (roastery, roast_degree, roast_date, name, description, price_per_kg_nok, coffee_batch_id)
-    VALUES ('roastery2', 'degree2', 0002-02-02, 'name2', 'description2', 2, 2)
+    VALUES ('Roasted Bean', 'degree2', 2022-02-02, 'Finest Coffee', 'high quality beans', 11, 2)
     """
 )
 cursor.execute(
     """
     INSERT INTO coffee (roastery, roast_degree, roast_date, name, description, price_per_kg_nok, coffee_batch_id)
-    VALUES ('roastery3', 'degree3', 0003-03-03, 'name3', 'description3', 3, 3)
+    VALUES ('Golden Roast', 'degree3', 2020-03-03, 'Lux Coffee', 'supreme coffee beans', 14, 3)
     """
 )
 cursor.execute(
     """
     INSERT INTO coffee_tasting (notes, score, taste_date, coffee_id, user_id)
-    VALUES ('note1', 1, 0001-01-01, 1, 1)
+    VALUES ('round taste', 7, 2022-01-01, 1, 1)
     """
 )
 cursor.execute(
     """
     INSERT INTO coffee_tasting (notes, score, taste_date, coffee_id, user_id)
-    VALUES ('note2', 2, 0002-02-02, 2, 2)
+    VALUES ('strong but tasty', 8, 2022-02-02, 2, 2)
     """
 )
 cursor.execute(
     """
     INSERT INTO coffee_tasting (notes, score, taste_date, coffee_id, user_id)
-    VALUES ('note3', 3, 0003-03-03, 3, 3)
-    """
-)
-
-cursor.execute(
-    """
-    INSERT INTO user (full_name, score, user_id)
-    VALUES ('note3', 3, 0003-03-03, 3, 3)
+    VALUES ('delicious flavour, fine scent', 10, 2022-03-03, 3, 3)
     """
 )
 
