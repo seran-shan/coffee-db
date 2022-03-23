@@ -1,5 +1,5 @@
 import sqlite3
-con = sqlite3.connect("test.db")
+con = sqlite3.connect("CoffeeDB.db")
 
 cursor = con.cursor()
 
