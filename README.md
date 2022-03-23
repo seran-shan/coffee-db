@@ -4,6 +4,12 @@
 Databaseapplikasjon implementert i Python.
 Lager modeller, skriver SQL og aksesserer databasen bygd med SQLite3 gjennom Python.
 
+## Utviklere
+
+- [Julius Birkevold](https://github.com/juliusbirkevold)
+- [Seran Shan](https://github.com/seran-shan)
+- [Hammad Siddiqui](https://github.com/hammadsi)
+
 ## Bygd Med
 - Python
 - SQLite3
@@ -63,9 +69,3 @@ benyttes heller:
 #### 3.
 #### 4.
 #### 5.
-
-## Utviklere
-
-- [Julius Birkevold](https://github.com/juliusbirkevold)
-- [Seran Shan](https://github.com/seran-shan)
-- [Hammad Siddiqui](https://github.com/hammadsi)
