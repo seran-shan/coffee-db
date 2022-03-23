@@ -7,8 +7,8 @@ con = connect('CoffeeDB.db')
 cursor = con.cursor()
 
 # Function to add new tasting
-def new_tasting(notes: str, score: int, taste_date: str, coffee_id: int, user_id: int):
-    
+def new_tasting(notes: str, score: int, coffee_id: int, user_id: int):
+    taste_date = date.today().strftime("%Y/%m/%d")
     try:
         cursor.execute(
             """INSERT INTO coffee_tasting (notes, score, taste_date, coffee_id, user_id)
@@ -65,7 +65,7 @@ def get_unique_tasting():
     return query_result
 
 # Gets all coffees described (both user and roastery) by the given search word
-def getCoffeeByDescription(search: str):
+def get_coffee_by_description(search: str):
     query = '''SELECT coffee.roastery AS roastery, coffee.name AS Coffeename
                FROM coffee_tasting AS CT NATURAL JOIN coffee AS C
                WHERE CT.notes like "?" OR C.description like "?";
