@@ -15,6 +15,7 @@ CREATE TABLE "coffee" (
     "roastery" TEXT NOT NULL,
     "roast_degree" TEXT NOT NULL,
     "roast_date" DATE NOT NULL,
+    "name" TEXT NOT NULL,
     "description" TEXT NOT NULL, 
     "price_per_kg_nok" INTEGER NOT NULL,
     "coffee_batch_id" INTEGER NOT NULL,
