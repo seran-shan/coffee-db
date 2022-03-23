@@ -29,8 +29,10 @@ def get_coffe_by_value():
 
         query_result = []
 
-        for i in cursor.execute(query):
-            roastery_name, name, price_per_kg_nok, score = i
+        tuples = cursor.execute(query)
+
+        for tuple in tuples:
+            roastery_name, name, price_per_kg_nok, score = tuple
 
             query_result.append({
                 "roastery_name": roastery_name,
@@ -53,8 +55,10 @@ def get_unique_tasting():
     
     query_result = []
 
-    for tupel in cursor.execute(query, [2022]):
-        full_name, count = tupel
+    tuples = cursor.execute(query, [2022])
+
+    for tuple in tuples:
+        full_name, count = tuple
 
         query_result.append({
             'full_name': full_name,
@@ -73,8 +77,10 @@ def get_coffee_by_description(search: str):
 
     query_result = []
 
-    for tupel in cursor.execute(query, [search, search]):
-        roastery, coffee_name = tupel
+    tuples = cursor.execute(query, [search, search])
+
+    for tuple in tuples:
+        roastery, coffee_name = tuple
 
         query_result.append({
             "roastery_name": roastery,
@@ -97,8 +103,10 @@ def get_coffee_by_country_and_processing():
 
     query_result = []
 
-    for tupel in cursor.execute(query, ['vasket', 'Colombia', 'Rwanda']):
-        roastery, coffee_name = tupel
+    tuples = cursor.execute(query, ['vasket', 'Colombia', 'Rwanda'])
+
+    for tuple in tuples:
+        roastery, coffee_name = tuple
 
         query_result.append({
             "roastery": roastery,
