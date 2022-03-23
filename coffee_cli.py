@@ -32,10 +32,10 @@ def us1():
     print("Tast inn følgende for å legge inn ny smaking - ")
     roastery = input("Brennerinavn: ")
     coffee_name = input("Kaffenavn: ")
-    score = input("Points: ")
+    score = int(input("Points: "))
     note = input("Smaksnotat: ")
 
-    coffe_id = cdb.get_coffee_id(coffee_name, roastery)
+    coffe_id = (cdb.get_coffee_id(coffee_name, roastery))
     user_id = cdb.get_user_id()
     
     cdb.new_tasting(note, score, coffe_id, user_id)

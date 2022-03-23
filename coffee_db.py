@@ -1,5 +1,6 @@
 from datetime import date
 from sqlite3 import connect
+from xxlimited import new
 
 
 # Get coffee_id by name and roastery
@@ -8,11 +9,11 @@ def get_coffee_id(coffee_name: str, roastery: str):
     con = connect('CoffeeDB.db')
     cursor = con.cursor()
     query = '''SELECT coffee_id
-               FROM Coffee
+               FROM coffee
                WHERE name = ? AND roastery = ?;
             '''
 
-    cursor.execute(query, (coffee_name, roastery))
+    cursor.execute(query, [coffee_name, roastery])
     res = cursor.fetchone()
     con.close()
     if res is None:
@@ -20,7 +21,10 @@ def get_coffee_id(coffee_name: str, roastery: str):
     else:
         return res
 
+
+
 # Function to add new tasting
+
 
 def new_tasting(notes: str, score: int, coffee_id: int, user_id: int):
     con = connect('CoffeeDB.db')
