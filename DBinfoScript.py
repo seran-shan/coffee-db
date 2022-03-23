@@ -100,20 +100,20 @@ cursor.execute(
 
 cursor.execute(
     """
-    INSERT INTO coffee (coffee_id, roastery, roast_degree, name,roast_date, description, price_per_kg_nok, coffee_batch_id)
-    VALUES (1, 'roastery1', 'degree1', 'name1', 0001-01-01, 'description1', 1, 1)
+    INSERT INTO coffee (coffee_id, roastery, roast_degree,roast_date, name, description, price_per_kg_nok, coffee_batch_id)
+    VALUES (1, 'roastery1', 'degree1', 0001-01-01, 'name1', 'description1', 1, 1)
     """
 )
 cursor.execute(
     """
-    INSERT INTO coffee (coffee_id, roastery, roast_degree, name, roast_date, description, price_per_kg_nok, coffee_batch_id)
-    VALUES (2, 'roastery2', 'degree2', 'name2', 0002-02-02, 'description2', 2, 2)
+    INSERT INTO coffee (coffee_id, roastery, roast_degree, roast_date, name, description, price_per_kg_nok, coffee_batch_id)
+    VALUES (2, 'roastery2', 'degree2', 0002-02-02, 'name2', 'description2', 2, 2)
     """
 )
 cursor.execute(
     """
-    INSERT INTO coffee (coffee_id, roastery, roast_degree, name, roast_date, description, price_per_kg_nok, coffee_batch_id)
-    VALUES (3, 'roastery3', 'degree3', 'name3', 0003-03-03, 'description3', 3, 3)
+    INSERT INTO coffee (coffee_id, roastery, roast_degree, roast_date, name, description, price_per_kg_nok, coffee_batch_id)
+    VALUES (3, 'roastery3', 'degree3', 0003-03-03, 'name3', 'description3', 3, 3)
     """
 )
 cursor.execute(
