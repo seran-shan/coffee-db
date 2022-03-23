@@ -1,8 +1,15 @@
 import sqlite3
+
 con = sqlite3.connect("CoffeeDB.db")
 
 cursor = con.cursor()
 
+cursor.execute(
+    """
+    INSERT INTO user (full_name, email, password)
+    VALUES ('Bruker', 'Bruker@email.no', 'BrukerPassord')
+    """
+)
 cursor.execute(
     """
     INSERT INTO user (full_name, email, password)
@@ -62,19 +69,19 @@ cursor.execute(
 
 cursor.execute(
     """
-    INSERT INTO processing_type (type, description)
-    VALUES ('unwashed', 'raw coffe beans')
+    INSERT INTO processing_type (name, description)
+    VALUES ('aged', 'raw coffe beans')
     """
 )
 cursor.execute(
     """
-    INSERT INTO processing_type (type, description)
-    VALUES ('unwashed', 'raw ecological coffee')
+    INSERT INTO processing_type (name, description)
+    VALUES ('plain', 'raw ecological coffee')
     """
 )
 cursor.execute(
     """
-    INSERT INTO processing_type (type, description)
+    INSERT INTO processing_type (name, description)
     VALUES ('washed', 'washed, processed, finest quality')
     """
 )
@@ -82,56 +89,56 @@ cursor.execute(
 cursor.execute(
     """
     INSERT INTO coffee_batch (harvest_year, price_pr_kg_usd, processing_type_id, coffee_farm_id)
-    VALUES (2020-01-02, 9, 1, 1)
+    VALUES ('2018-01-01', 1, 1, 1)
     """
 )
 cursor.execute(
     """
     INSERT INTO coffee_batch (harvest_year, price_pr_kg_usd, processing_type_id, coffee_farm_id)
-    VALUES (2021-02-02, 8, 2, 2)
+    VALUES ('2020-02-02', 2, 2, 2)
     """
 )
 cursor.execute(
     """
     INSERT INTO coffee_batch (harvest_year, price_pr_kg_usd, processing_type_id, coffee_farm_id)
-    VALUES (2022-03-03, 7, 3, 3)
+    VALUES ('2022-03-03',3 , 3, 3)
     """
 )
 
 cursor.execute(
     """
     INSERT INTO coffee (roastery, roast_degree,roast_date, name, description, price_per_kg_nok, coffee_batch_id)
-    VALUES ('Coffee Roaster', 'degree1', 2021-01-01, 'Golden Coffee', 'fine roasted beans', 10, 1)
+    VALUES ('Tromsø-brenneri', 'degree-1', '2018-01-01', 'TromsøKaffen', 'Serveres best kaldt', 1, 1)
     """
 )
 cursor.execute(
     """
     INSERT INTO coffee (roastery, roast_degree, roast_date, name, description, price_per_kg_nok, coffee_batch_id)
-    VALUES ('Roasted Bean', 'degree2', 2022-02-02, 'Finest Coffee', 'high quality beans', 11, 2)
+    VALUES ('Trondheims-brenneri', 'degree-2', '2020-02-02', 'TrondheimsKaffen', 'Setter seg fast i barten', 1, 2)
     """
 )
 cursor.execute(
     """
     INSERT INTO coffee (roastery, roast_degree, roast_date, name, description, price_per_kg_nok, coffee_batch_id)
-    VALUES ('Golden Roast', 'degree3', 2020-03-03, 'Lux Coffee', 'supreme coffee beans', 14, 3)
+    VALUES ('Oslo-brenneri', 'degree-3', '2022-03-03', 'OsloKaffen', 'Alle har meninger om den', 1, 3)
     """
 )
 cursor.execute(
     """
     INSERT INTO coffee_tasting (notes, score, taste_date, coffee_id, user_id)
-    VALUES ('round taste', 7, 2022-01-01, 1, 1)
+    VALUES ('Dette er kaffe1', 1, '2018-01-01', 1, 1)
     """
 )
 cursor.execute(
     """
     INSERT INTO coffee_tasting (notes, score, taste_date, coffee_id, user_id)
-    VALUES ('strong but tasty', 8, 2022-02-02, 2, 2)
+    VALUES ('Dette er kaffe2', 2, '2020-02-02', 2, 2)
     """
 )
 cursor.execute(
     """
     INSERT INTO coffee_tasting (notes, score, taste_date, coffee_id, user_id)
-    VALUES ('delicious flavour, fine scent', 10, 2022-03-03, 3, 3)
+    VALUES ('Dette er kaffe 3', 3, '2022-03-03', 3, 3)
     """
 )
 

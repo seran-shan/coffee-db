@@ -1,6 +1,8 @@
 from os import system
 import sqlite3
 from tokenize import String
+from datetime import date
+
 con = sqlite3.connect("CoffeeDB.db")
 
 cursor = con.cursor()
@@ -21,7 +23,7 @@ def printTopUsers():
         SELECT FullName, Count(Distinct CoffeeID) AS DistinctTastings
         FROM User AS U NATURAL JOIN CoffeeTasting AS CT
         WHERE Dato like “%2022”
-        GROUP BY U.UserID
+        GROUP BY B.UserID
         ORDER BY DistinctTastings DESC;
         """
     for row in cursor.execute(query):
@@ -29,9 +31,9 @@ def printTopUsers():
 
 def printValueForMoney():
     query = """
-        SELECT coffee.roastery AS roasteryName, coffee.name AS CoffeeName, price/kg, (AVERAGE (score)) / price/kg AS AverageScore
+        SELECT Coffee.roastery AS roasteryName, Coffee.name AS CoffeeName, price/kg, (AVERAGE (score)) / price/kg AS AverageScore
         FROM Coffee AS C INNER JOIN CoffeeTasting AS CT USING CoffeeID
-        GROUP BY CT.coffee_id
+        GROUP BY CT.CoffeeID
         ORDER BY AverageScore DESC;
         """
     for row in cursor.execute(query):
@@ -57,7 +59,6 @@ def printUnwashed():
         """
     for row in cursor.execute(query):
         print(row)
-
-printValueForMoney()
+        
 
 con.close()
