@@ -13,12 +13,13 @@ def get_coffee_id(coffee_name: str, roastery: str):
                WHERE name = ? AND roastery = ?;
             '''
 
-    try:
-        cursor.execute(query, (coffee_name, roastery))
-        return cursor.fetchone()
-        
-    except Exception:
-        print('Could not find coffee_id')
+    cursor.execute(query, (coffee_name, roastery))
+    res = cursor.fetchone()
+
+    if res is None:
+        return None
+    else:
+        return res
 
 # Function to add new tasting
 def new_tasting(notes: str, score: int, coffee_id: int, user_id: int):
@@ -106,6 +107,10 @@ def get_coffee_by_description(search: str):
 
     con.commit()
     return query_result
+
+# Getting the user id of the pre-logged in user
+def get_user_id():
+    return 1
 
 # Gets coffee from Rwanda or Colombia that are unwashed
 def get_coffee_by_country_and_processing():
