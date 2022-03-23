@@ -1,8 +1,6 @@
 from datetime import date
 from sqlite3 import connect
 
-from numpy import void
-
 # Connecting to database
 con = connect('CoffeeDB.db')
 # Creating a cursor
