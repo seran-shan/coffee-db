@@ -25,76 +25,76 @@ cursor.execute(
 cursor.execute(
     """
     INSERT INTO coffee_bean (species)
-    VALUES ('species1');
+    VALUES ('Arabica');
     """
 )
 cursor.execute(
     """
     INSERT INTO coffee_bean (species)
-    VALUES ('species2')
+    VALUES ('Robusta')
     """
 )
 cursor.execute(
     """
     INSERT INTO coffee_bean (species)
-    VALUES ('species3')
+    VALUES ('Liberica')
     """
 )
 
 cursor.execute(
     """
     INSERT INTO coffee_farm (name, meters_above_sea, region, country)
-    VALUES ('name1', 1, 'region1', 'country1')
+    VALUES ('hermano', 177, 'South America', 'Colombia')
     """
 )
 cursor.execute(
     """
     INSERT INTO coffee_farm (name, meters_above_sea, region,country)
-    VALUES ('name2', 2, 'region2', 'country2')
+    VALUES ('golden coffee', 27, 'Africa', 'Rwanda')
     """
 )
 cursor.execute(
     """
     INSERT INTO coffee_farm (name, meters_above_sea, region, country)
-    VALUES ('name3', 3, 'region3', 'country3')
+    VALUES ('cafe de abuela', 88, 'South America', 'Argentina')
     """
 )
 
 cursor.execute(
     """
-    INSERT INTO processing_type (name, description)
-    VALUES ('name1', 'description1')
+    INSERT INTO processing_type (type, description)
+    VALUES ('unwashed', 'raw coffe beans')
     """
 )
 cursor.execute(
     """
-    INSERT INTO processing_type (name, description)
-    VALUES ('name2', 'description2')
+    INSERT INTO processing_type (type, description)
+    VALUES ('unwashed', 'raw ecological coffee')
     """
 )
 cursor.execute(
     """
-    INSERT INTO processing_type (name, description)
-    VALUES ('name3', 'description3')
+    INSERT INTO processing_type (type, description)
+    VALUES ('washed', 'washed, processed, finest quality')
     """
 )
 
 cursor.execute(
     """
     INSERT INTO coffee_batch (harvest_year, price_pr_kg_usd, processing_type_id, coffee_farm_id)
-    VALUES (0001-01-01, 1, 1, 1)
+    VALUES (2020-01-02, 9, 1, 1)
     """
 )
 cursor.execute(
     """
     INSERT INTO coffee_batch (harvest_year, price_pr_kg_usd, processing_type_id, coffee_farm_id)
-    VALUES (0002-02-02, 2, 2, 2)
+    VALUES (2021-02-02, 8, 2, 2)
     """
 )
 cursor.execute(
     """
     INSERT INTO coffee_batch (harvest_year, price_pr_kg_usd, processing_type_id, coffee_farm_id)
-    VALUES (0003-03-03,3 , 3, 3)
+    VALUES (2022-03-03, 7, 3, 3)
     """
 )
 
