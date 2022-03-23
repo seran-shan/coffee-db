@@ -28,6 +28,7 @@ def init_menu():
 def us1():
     notes = str(input("Skriv inn et kaffenotat"))
 
+
 def us2():
     
 

@@ -6,6 +6,20 @@ con = connect('CoffeeDB.db')
 # Creating a cursor
 cursor = con.cursor()
 
+# Get coffee_id by name and roastery
+def get_coffee_id(coffee_name: str, roastery: str):
+    query = '''SELECT coffee_id
+               FROM Coffee
+               WHERE name = ? AND roastery = ?;
+            '''
+
+    try:
+        cursor.execute(query, (coffee_name, roastery))
+        return cursor.fetchone()
+        
+    except Exception:
+        print('Could not find coffee_id')
+
 # Function to add new tasting
 def new_tasting(notes: str, score: int, coffee_id: int, user_id: int):
     taste_date = date.today().strftime("%Y/%m/%d")
