@@ -63,7 +63,8 @@ benyttes heller:
 #### 3.
 #### 4.
 #### 5.
-## Authors
+
+## Utviklere
 
 - [Julius Birkevold](https://github.com/juliusbirkevold)
 - [Seran Shan](https://github.com/seran-shan)
