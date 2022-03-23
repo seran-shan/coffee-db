@@ -1,16 +1,12 @@
 from datetime import date
 from sqlite3 import connect
-from tkinter.tix import Select
 
-# Connecting to database
-con = connect('CoffeeDB.db')
-# Creating a cursor
-cursor = con.cursor()
 
 # Get coffee_id by name and roastery
 
-
 def get_coffee_id(coffee_name: str, roastery: str):
+    con = connect('CoffeeDB.db')
+    cursor = con.cursor()
     query = '''SELECT coffee_id
                FROM Coffee
                WHERE name = ? AND roastery = ?;
@@ -18,7 +14,7 @@ def get_coffee_id(coffee_name: str, roastery: str):
 
     cursor.execute(query, (coffee_name, roastery))
     res = cursor.fetchone()
-
+    con.close()
     if res is None:
         return None
     else:
@@ -26,8 +22,9 @@ def get_coffee_id(coffee_name: str, roastery: str):
 
 # Function to add new tasting
 
-
 def new_tasting(notes: str, score: int, coffee_id: int, user_id: int):
+    con = connect('CoffeeDB.db')
+    cursor = con.cursor()
     taste_date = date.today().strftime("%Y/%m/%d")
     try:
         cursor.execute(
@@ -39,9 +36,12 @@ def new_tasting(notes: str, score: int, coffee_id: int, user_id: int):
         print('New tasting added!')
     except Exception:
         print('Something went wrong when adding new taste!')
+    con.close()
 
 
 def get_coffe_by_value():
+    con = connect('CoffeeDB.db')
+    cursor = con.cursor()
     query = """SELECT roastery AS roastery_name, 
                 name AS coffee_name, price_per_kg_nok, 
                 (AVG(score) / price_per_kg_nok) AS AverageScore
@@ -66,12 +66,15 @@ def get_coffe_by_value():
         })
 
     con.commit()
+    con.close()
     return query_result
 
 # Function to get a list of user with most unique coffee tastings
 
 
 def get_unique_tasting():
+    con = connect('CoffeeDB.db')
+    cursor = con.cursor()
     query = '''SELECT U.full_name, Count(DISTINCT CT.coffee_id) AS DistinctTastings
                FROM coffee_tasting AS CT INNER JOIN user AS U
                WHERE CT.taste_date like ?
@@ -93,12 +96,15 @@ def get_unique_tasting():
         })
 
     con.commit()
+    con.close()
     return query_result
 
 # Gets all coffees described (both user and roastery) by the given search word
 
 
 def get_coffee_by_description(search: str):
+    con = connect('CoffeeDB.db')
+    cursor = con.cursor()
     query = '''SELECT C.roastery AS roastery, C.name AS Coffeename
                FROM coffee_tasting AS CT NATURAL JOIN coffee AS C
                WHERE CT.notes like ? OR C.description like ?;
@@ -118,6 +124,7 @@ def get_coffee_by_description(search: str):
         })
 
     con.commit()
+    con.close()
     return query_result
 
 # Getting the user id of the pre-logged in user
@@ -130,6 +137,8 @@ def get_user_id():
 
 
 def get_coffee_by_country_and_processing():
+    con = connect('CoffeeDB.db')
+    cursor = con.cursor()
     query = """SELECT C.roastery, C.name
                FROM ((coffee AS C INNER JOIN coffee_batch AS CB ON (C.coffee_batch_id = CB.batch_id)) 
                INNER JOIN processing_type AS PT ON (CB.processing_type_id = PT.type_id))
@@ -151,6 +160,5 @@ def get_coffee_by_country_and_processing():
         })
 
     con.commit()
+    con.close()
     return query_result
-
-con.close()
