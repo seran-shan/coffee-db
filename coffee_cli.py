@@ -1,18 +1,18 @@
 import coffee_db as cdb
-from tabulate import tabulate
 
 def init_menu():
    while True:
-        print("Takk for at du logget inn\n")
-        print("Velkommen til dmenyen! \n")
-        menu_input = int(input(('''Skriv inn ønsket valg: \n"
+        print("\nTakk for at du logget inn\n")
+        print("Velkommen til menyen! \n")
+        menu_input = int(input(("Skriv inn ønsket valg: \n"
                                     "1. Legge til ny smaking \n"
                                     "2. Se brukere med flest unike kaffesmakinger \n"
                                     "3. Se kaffene som gir mest for pengene \n"
                                     "4. Se kaffene beskrevet med et søkeord \n"
                                     "5. Se ikke vaskede kaffer fra Colombia og Rwanda \n"
-                                    "6. Logge ut 
-                                ''')))
+                                    "6. Logge ut \n\n"
+                                    "Valg: "
+                                )))
         if menu_input == 1:
             us1()
         elif menu_input == 2:
@@ -61,9 +61,7 @@ def us3():
         print("The list of most valuable coffe per kg is empty")
     else:
         print("Most valuable coffe per kg -")
-        header = list_of_data[0].keys()
-        rows =  [x.values() for x in list_of_data]
-        print(tabulate(rows, header))
+        print(list_of_data)
 
 def us4():
     print("Tast inn søkeord - ")
@@ -77,9 +75,7 @@ def us4():
         print("No result found")
     else:
         print("Søketreff -")
-        header = list_of_data[0].keys()
-        rows =  [x.values() for x in list_of_data]
-        print(tabulate(rows, header))
+        print(list_of_data)
 
 def us5():
     list_of_data = cdb.get_coffee_by_country_and_processing()
@@ -90,6 +86,6 @@ def us5():
         print("No result found")
     else:
         print("Ikke vaskede kaffer fra Colombia og Rwanda -")
-        header = list_of_data[0].keys()
-        rows =  [x.values() for x in list_of_data]
-        print(tabulate(rows, header))
+        print(list_of_data)
+
+init_menu()
