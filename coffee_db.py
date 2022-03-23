@@ -7,18 +7,18 @@ con = connect('CoffeeDB.db')
 cursor = con.cursor()
 
 # Function to add new tasting
-def new_tasting(notes: str, score: int, coffee_id: int, user_id: int):
-    taste_date = date.today()
+def new_tasting(notes: str, score: int, taste_date: str, coffee_id: int, user_id: int):
     
     try:
         cursor.execute(
-            """INSERT INTO CoffeeTasting (notes, score, taste_date, coffe_id, user_id)
+            """INSERT INTO coffee_tasting (notes, score, taste_date, coffee_id, user_id)
                VALUES (?, ?, ?, ?, ?)
             """, (notes, score, taste_date, coffee_id, user_id)
         )
+        con.commit()
         print('New tasting added!')
     except Exception:
-        print('Something went wrong when adding new tase!')
+        print('Something went wrong when adding new taste!')
 
 def get_coffe_by_value():
         query = """SELECT roastery AS roastery_name, name AS coffee_name, price_per_kg_nok, (AVERAGE (score) / price_per_kg_nok) AS AverageScore
