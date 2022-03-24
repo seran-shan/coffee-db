@@ -4,7 +4,7 @@ def init_menu():
 
    full_name = cdb.get_full_name_of_current_user()
    print(f"\nThanks for logging in, {full_name}\n")
-   
+
    while True:
         print("Welcome to the menu! \n")
         menu_input = int(input(("Type your choice: \n"
@@ -55,7 +55,7 @@ def us2():
         print(users_unique_tasting)
 
 def us3():
-    list_of_data = cdb.get_unique_tasting()
+    list_of_data = cdb.get_coffe_by_value()
 
     if list_of_data is None:
         print("Error with getting most valuable coffe per kg")
