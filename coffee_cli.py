@@ -35,22 +35,21 @@ def us1():
     score = int(input("Points: "))
     note = input("Note: ")
 
-    coffe_id = (cdb.get_coffee_id(coffee_name, roastery))
+    coffe_id = cdb.get_coffee_id(coffee_name, roastery)[0]
     user_id = cdb.get_user_id()
     
     cdb.new_tasting(note, score, coffe_id, user_id)
 
 def us2():
-    list_of_user = cdb.get_unique_tasting()
+    users_unique_tasting = cdb.get_unique_tasting()
 
-    if list_of_user is None:
+    if users_unique_tasting is None:
         print("Error with getting unique tastings")
-    elif len(list_of_user) == 0:
+    elif len(users_unique_tasting) == 0:
         print("The list is empty")
     else:
         print("Users with most unique coffee tasting -")
-        for key, value in list_of_user:
-            print(key, ' : ', value)
+        print(users_unique_tasting)
 
 def us3():
     list_of_data = cdb.get_unique_tasting()
@@ -78,14 +77,14 @@ def us4():
         print(list_of_data)
 
 def us5():
-    list_of_data = cdb.get_coffee_by_country_and_processing()
+    data = cdb.get_coffee_by_country_and_processing()
 
-    if list_of_data is None:
+    if data is None:
         print("Error with getting results based on search word")
-    elif len(list_of_data) == 0:
+    elif len(data) == 0:
         print("No result found")
     else:
         print("Unwashed coffees from Rwanda and Colobmia -")
-        print(list_of_data)
+        print(data)
 
 init_menu()
