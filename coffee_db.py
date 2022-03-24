@@ -4,7 +4,6 @@ from xxlimited import new
 
 
 # Get coffee_id by name and roastery
-
 def get_coffee_id(coffee_name: str, roastery: str):
     con = connect('CoffeeDB.db')
     cursor = con.cursor()
@@ -22,10 +21,7 @@ def get_coffee_id(coffee_name: str, roastery: str):
         return res
 
 
-
 # Function to add new tasting
-
-
 def new_tasting(notes: str, score: int, coffee_id: int, user_id: int):
     con = connect('CoffeeDB.db')
     cursor = con.cursor()
@@ -74,8 +70,6 @@ def get_coffe_by_value():
     return query_result
 
 # Function to get a list of user with most unique coffee tastings
-
-
 def get_unique_tasting():
     con = connect('CoffeeDB.db')
     cursor = con.cursor()
@@ -104,8 +98,6 @@ def get_unique_tasting():
     return query_result
 
 # Gets all coffees described (both user and roastery) by the given search word
-
-
 def get_coffee_by_description(search: str):
     con = connect('CoffeeDB.db')
     cursor = con.cursor()
@@ -116,7 +108,7 @@ def get_coffee_by_description(search: str):
 
     query_result = []
 
-    cursor.execute(query, [search, search])
+    cursor.execute(query, ['%' + search + '%', '%' + search + '%'])
     tuples = cursor.fetchall()
 
     for tuple in tuples:
@@ -132,14 +124,27 @@ def get_coffee_by_description(search: str):
     return query_result
 
 # Getting the user id of the pre-logged in user
-
-
 def get_user_id():
     return 1
 
+# Get user fullname by user id
+def get_full_name_of_current_user():
+    con = connect('CoffeeDB.db')
+    cursor = con.cursor()
+    query = '''SELECT full_name
+               FROM user
+               WHERE user_id = ?;
+            '''
+
+    cursor.execute(query, [get_user_id()])
+    res = cursor.fetchone()
+    con.close()
+    if res is None:
+        return None
+    else:
+        return res[0]
+
 # Gets coffee from Rwanda or Colombia that are unwashed
-
-
 def get_coffee_by_country_and_processing():
     con = connect('CoffeeDB.db')
     cursor = con.cursor()
