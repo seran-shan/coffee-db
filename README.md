@@ -47,7 +47,7 @@ benyttes heller:
 
 ## Dokumentasjon - Løsning for Brukerhistorier
 
- 1. En bruker smaker kaffen Vinterkaffe 2022 fra Trondheims-brenneriet Jacobsen & Svart (brent 20.01.2022), gir den 10 poeng og skriver «Wow – en odyssé for smaksløkene: sitrusskall, melkesjokolade, aprikos!». Kaf- fen er lysbrent, bærtørket Bourbon (c. arabica), kommer fra gården Nombre de Dios (1500 moh.) i Santa Ana, El Salvador, har en kilopris på 600 kr og er ifølge brenneriet «En velsmakende og kompleks kaffe for mørketiden». Kaffen ble høstet i 2021 og gården fikk utbetalt 8 USD per kg kaffe. Input fra brukerens side er brenneri, kaffenavn, poeng og smaksnotat.
+ 1. En bruker smaker kaffen Vinterkaffe 2022 fra Trondheims-brenneriet Jacobsen & Svart (brent 20.01.2022), gir den 10 poeng og skriver «Wow – en odyssé for smaksløkene: sitrusskall, melkesjokolade, aprikos!». Kaffen er lysbrent, bærtørket Bourbon (c. arabica), kommer fra gården Nombre de Dios (1500 moh.) i Santa Ana, El Salvador, har en kilopris på 600 kr og er ifølge brenneriet «En velsmakende og kompleks kaffe for mørketiden». Kaffen ble høstet i 2021 og gården fikk utbetalt 8 USD per kg kaffe. Input fra brukerens side er brenneri, kaffenavn, poeng og smaksnotat.
 #### Løsning:
 > Brukeren vil bli bedt om å gge inn brenneri, kaffenavn, poeng og smaksnotat. 
 > 
@@ -63,7 +63,7 @@ benyttes heller:
 #### Løsning:
 > Tast inn 2, og motta en liste med brukere som har smakt flest unike kaffer
 
- 3. En skal kunne se hvilke kaffer som gir forbrukeren mest for pengene ifølge KaffeDBs brukere (høyeste gjennomsnittsscore kontra pris), sor- tert synkende. Listen skal inneholde brennerinavn, kaffenavn, pris og gjennomsnittsscore for hver kaffe.
+ 3. En skal kunne se hvilke kaffer som gir forbrukeren mest for pengene ifølge KaffeDBs brukere (høyeste gjennomsnittsscore kontra pris), sortert synkende. Listen skal inneholde brennerinavn, kaffenavn, pris og gjennomsnittsscore for hver kaffe.
 #### Løsning:
 > Tast inn 3, og motta en liste med mest verdifulle kaffe basert på score
 
@@ -75,7 +75,7 @@ benyttes heller:
 > 
 > Motta en liste med kaffe beskrevet som floral
 
- 5. En annen bruker er lei av å bli skuffet av vaskede kaffer og deres tid- vis kjedelige smak, og ønsker derfor å søke etter kaffer fra Rwanda og Colombia som ikke er vaskede. Systemet returnerer en liste over brennerinavn og kaffenavn.
+ 5. En annen bruker er lei av å bli skuffet av vaskede kaffer og deres tidvis kjedelige smak, og ønsker derfor å søke etter kaffer fra Rwanda og Colombia som ikke er vaskede. Systemet returnerer en liste over brennerinavn og kaffenavn.
 #### Løsning:
 > Tast inn 5, og motta en liste med mest verdifulle kaffe basert på score
 
