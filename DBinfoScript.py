@@ -76,7 +76,7 @@ cursor.execute(
 cursor.execute(
     """
     INSERT INTO processing_type (name, description)
-    VALUES ('plain', 'raw ecological coffee')
+    VALUES ('plain', 'raw ecological coffee, floral')
     """
 )
 cursor.execute(
@@ -108,7 +108,7 @@ cursor.execute(
 cursor.execute(
     """
     INSERT INTO coffee (roastery, roast_degree,roast_date, name, description, price_per_kg_nok, coffee_batch_id)
-    VALUES ('Tromsø-brenneri', 'degree-1', '2018-01-01', 'TromsøKaffen', 'Serveres best kaldt', 1, 1)
+    VALUES ('Tromso-brenneri', 'degree-1', '2018-01-01', 'TromsoKaffen', 'Serveres best kaldt', 1, 1)
     """
 )
 cursor.execute(
