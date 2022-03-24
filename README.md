@@ -25,7 +25,7 @@ offisielle database-API-spesifikasjon (PEP 249). Dersom dette ikke allerede er p
 Kjør prosjektet gjennom Python.
 
 ```bash
-  python coffe_db.py 
+  python3 coffe_db.py 
 ```
     
 ## Optimaliseringer og Konvensjoner
