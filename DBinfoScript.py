@@ -7,7 +7,7 @@ cursor = con.cursor()
 cursor.execute(
     """
     INSERT INTO user (full_name, email, password)
-    VALUES ('Bruker', 'Bruker@email.no', 'BrukerPassord')
+    VALUES ('Sensor Sensorsen', 'Bruker@email.no', 'BrukerPassord')
     """
 )
 cursor.execute(
@@ -108,7 +108,7 @@ cursor.execute(
 cursor.execute(
     """
     INSERT INTO coffee (roastery, roast_degree,roast_date, name, description, price_per_kg_nok, coffee_batch_id)
-    VALUES ('Tromso-brenneri', 'degree-1', '2018-01-01', 'TromsoKaffen', 'Serveres best kaldt', 1, 1)
+    VALUES ('Tromso-brenneri', 'degree-1', '2018-01-01', 'TromsoKaffen', 'Floral', 1, 1)
     """
 )
 cursor.execute(
