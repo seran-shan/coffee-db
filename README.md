@@ -25,7 +25,7 @@ offisielle database-API-spesifikasjon (PEP 249). Dersom dette ikke allerede er p
 Kjør prosjektet gjennom Python.
 
 ```bash
-  python3 coffe_cli.py 
+  python3 coffee_cli.py 
 ```
     
 ## Optimaliseringer og Konvensjoner
@@ -98,4 +98,3 @@ benyttes heller:
 > <br> 5. Unwashed coffees from Rwanda and Colobmia -
 > <br>    [{'roastery': 'Tromso-brenneri', 'coffee_name': 'TromsoKaffen'}, {'roastery': 'Trondheims-brenneri',  
 > <br>    'coffee_name': 'TrondheimsKaffen'}, {'roastery': 'Nidaros-brenneri', 'coffee_name': 'NidarosCoffee'}]
-> <br>
