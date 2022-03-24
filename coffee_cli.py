@@ -2,15 +2,15 @@ import coffee_db as cdb
 
 def init_menu():
    while True:
-        print("\nTakk for at du logget inn\n")
-        print("Velkommen til menyen! \n")
-        menu_input = int(input(("Skriv inn ønsket valg: \n"
-                                    "1. Legge til ny smaking \n"
-                                    "2. Se brukere med flest unike kaffesmakinger \n"
-                                    "3. Se kaffene som gir mest for pengene \n"
-                                    "4. Se kaffene beskrevet med et søkeord \n"
-                                    "5. Se ikke vaskede kaffer fra Colombia og Rwanda \n"
-                                    "6. Logge ut \n\n"
+        print("\nThanks for logging in\n")
+        print("Welcome to the menu! \n")
+        menu_input = int(input(("Type your choice: \n"
+                                    "1. Add new tasting \n"
+                                    "2. See users with most unique tastings \n"
+                                    "3. See the coffees with best value \n"
+                                    "4. Search for coffees with a search word \n"
+                                    "5. See unwashed coffees from Colombia and Rwanda \n"
+                                    "6. Log ut \n\n"
                                     "Valg: "
                                 )))
         if menu_input == 1:
@@ -26,14 +26,14 @@ def init_menu():
         elif menu_input == 6:
             break
         else:
-            print("Du har tastet inn et ugyldig valg")
+            print("Invalid choice")
 
 def us1():
-    print("Tast inn følgende for å legge inn ny smaking - ")
-    roastery = input("Brennerinavn: ")
-    coffee_name = input("Kaffenavn: ")
+    print("Enter the following for a new tasting - ")
+    roastery = input("Roastery Name: ")
+    coffee_name = input("Coffee Name: ")
     score = int(input("Points: "))
-    note = input("Smaksnotat: ")
+    note = input("Note: ")
 
     coffe_id = (cdb.get_coffee_id(coffee_name, roastery))
     user_id = cdb.get_user_id()
@@ -64,8 +64,8 @@ def us3():
         print(list_of_data)
 
 def us4():
-    print("Tast inn søkeord - ")
-    search_word = input("Søkeord: ")
+    print("Enter search word - ")
+    search_word = input("search word: ")
 
     list_of_data = cdb.get_coffee_by_description(search_word)
 
@@ -74,7 +74,7 @@ def us4():
     elif len(list_of_data) == 0:
         print("No result found")
     else:
-        print("Søketreff -")
+        print("Results -")
         print(list_of_data)
 
 def us5():
@@ -85,7 +85,7 @@ def us5():
     elif len(list_of_data) == 0:
         print("No result found")
     else:
-        print("Ikke vaskede kaffer fra Colombia og Rwanda -")
+        print("Unwashed coffees from Rwanda and Colobmia -")
         print(list_of_data)
 
 init_menu()
