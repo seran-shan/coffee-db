@@ -73,11 +73,13 @@ def get_coffe_by_value():
 def get_unique_tasting():
     con = connect('CoffeeDB.db')
     cursor = con.cursor()
-    query = '''SELECT U.full_name, Count(DISTINCT CT.coffee_id) AS DistinctTastings
-               FROM coffee_tasting AS CT INNER JOIN user AS U
+    query = '''SELECT U.full_name AS Navn, Count(DISTINCT C.coffee_id) AS "Distinct coffee"
+               FROM user As U 
+               INNER JOIN coffee_tasting AS CT on U.user_id = CT.user_id
+               INNER JOIN coffee AS C ON CT.coffee_id = C.coffee_id
                WHERE CT.taste_date like ?
-               GROUP BY CT.user_id
-               ORDER BY DistinctTastings DESC;
+               GROUP BY U.user_id
+               ORDER BY "Distinct coffee" DESC;
             '''
 
     query_result = []
