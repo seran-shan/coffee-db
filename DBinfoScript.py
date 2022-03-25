@@ -7,7 +7,7 @@ cursor = con.cursor()
 cursor.execute(
     """
     INSERT INTO user (full_name, email, password)
-    VALUES ('Bruker', 'Bruker@email.no', 'BrukerPassord')
+    VALUES ('Sensor Sensorsen', 'sensor@sensorsen.no', 'BrukerPassord')
     """
 )
 cursor.execute(
