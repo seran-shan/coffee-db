@@ -27,6 +27,7 @@ def init_menu():
         elif menu_input == 5:
             us5()
         elif menu_input == 6:
+            print("Bye!")
             break
         else:
             print("Invalid choice")
@@ -38,10 +39,13 @@ def us1():
     score = int(input("Points: "))
     note = input("Note: ")
 
-    coffe_id = cdb.get_coffee_id(coffee_name, roastery)[0]
-    user_id = cdb.get_user_id()
+    try:
+        coffe_id = cdb.get_coffee_id(coffee_name, roastery)[0]
+        user_id = cdb.get_user_id()
     
-    cdb.new_tasting(note, score, coffe_id, user_id)
+        cdb.new_tasting(note, score, coffe_id, user_id)
+    except Exception:
+        print(f'Roastery: {roastery} or coffe name: {coffee_name} don not exist!')
 
 def us2():
     users_unique_tasting = cdb.get_unique_tasting()
