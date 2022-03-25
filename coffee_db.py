@@ -127,7 +127,21 @@ def get_coffee_by_description(search: str):
 
 # Getting the user id of the pre-logged in user
 def get_user_id():
-    return 1
+    con = connect('CoffeeDB.db')
+    cursor = con.cursor()
+    query = '''SELECT user_id
+               FROM user
+               WHERE full_name = "Sensor Sensorsen" 
+                AND email = "sensor@sensorsen.no";
+            '''
+
+    cursor.execute(query)
+    res = cursor.fetchone()
+    con.close()
+    if res is None:
+        return None
+    else:
+        return res[0]
 
 # Get user fullname by user id
 def get_full_name_of_current_user():
