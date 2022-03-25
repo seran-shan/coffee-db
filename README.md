@@ -52,8 +52,8 @@ benyttes heller:
 > Brukeren vil bli bedt om å gge inn brenneri, kaffenavn, poeng og smaksnotat. 
 > 
 > Tast inn følgende for velutført test - 
-> <br> For brennerinavn: "Oslo-brenneri"
-> <br> For kaffenavn: "OsloKaffen"
+> <br> For brennerinavn: "Oslo-roastery"
+> <br> For kaffenavn: "OsloCoffee"
 > <br> For poeng: [valgfritt tall mellom 1-10]
 > <br> For notat: [valgfri beskrivelse]
 >
@@ -82,19 +82,19 @@ benyttes heller:
 ### De tekstlige resultatene for brukerhistorienes spørringer blir:
 
 > <br> 1. New tasting added! 
-> <br>    Something went wrong! <- If the same tasting is added more than once
+> <br>    Roastery: {roastery} or coffe name: {coffee_name} don not exist! <- Hvis noe går galt
 >
 > <br> 2. Users with most unique coffee tasting -
-> <br>    [{'full_name': 'Sensor Sensorsen', 'count': 3}, {'full_name': 'Julius', 'count': 1}]
+> <br>    [{'full_name': 'Sensor Sensorsen', 'count': 2}, {'full_name': 'Julius', 'count': 1}]
 >
 > <br> 3. Most valuable coffe per kg -
-> <br>    [{'roastery_name': 'Oslo-brenneri', 'name': 'OsloKaffen', 'price/kg': 23, 'score': 0.13043478260869565}, 
-> <br>    {'roastery_name': 'Trondheims-brenneri', 'name': 'TrondheimsKaffen', 'price/kg': 30, 'score': 0.05}, 
-> <br>    {'roastery_name': 'Tromso-brenneri', 'name': 'TromsoKaffen', 'price/kg': 40, 'score': 0.025}]
+> <br>    [{'roastery_name': 'Trondheim-roastery', 'name': 'TrondheimCoffee', 'price/kg': 1, 'AverageScore': 84.5}, 
+> <br>    {'roastery_name': 'Oslo-roastery', 'name': 'OsloCoffee', 'price/kg': 1, 'AverageScore': 76.0}, 
+> <br>    {'roastery_name': 'Tromso-roastery', 'name': 'TromsoCoffee', 'price/kg': 1, 'AverageScore': 44.0}]
 >
 > <br> 4. Results -
-> <br>    [{'roastery_name': 'Tromso-brenneri', 'coffee_name': 'TromsoKaffen'}]
+> <br>    [{'roastery_name': 'Tromso-roastery', 'coffee_name': 'TromsoCoffee'}]
 >
 > <br> 5. Unwashed coffees from Rwanda and Colobmia -
-> <br>    [{'roastery': 'Tromso-brenneri', 'coffee_name': 'TromsoKaffen'}, {'roastery': 'Trondheims-brenneri',  
-> <br>    'coffee_name': 'TrondheimsKaffen'}, {'roastery': 'Nidaros-brenneri', 'coffee_name': 'NidarosCoffee'}]
+> <br>    [{'roastery': 'Tromso-roastery', 'coffee_name': 'TromsoCoffee'}, {'roastery': 'Trondheim-roastery', 
+> <br>    'coffee_name': 'TrondheimCoffee'}]
