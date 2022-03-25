@@ -62,7 +62,7 @@ def get_coffe_by_value():
             "roastery_name": roastery_name,
             "name": name,
             "price/kg": price_per_kg_nok,
-            "score": score
+            "AverageScore": score
         })
 
     con.commit()
